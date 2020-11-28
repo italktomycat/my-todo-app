@@ -1,0 +1,67 @@
+.App {
+  
+  color: black;
+}
+
+.app-wrapper {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  width: max-content;
+  margin: 50px;
+  background-color: rgb(255, 255, 255, .3);
+  color: black;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  width: max-content;
+  margin: 50px;
+  background-color: rgb(255, 255, 255, .3);
+  color: black;
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+ color: grey;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  color: black !important;
+}
+
+.container-go-back {
+  min-width: 400px;
+  width: max-content;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-list {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  width: max-content;
+  margin: 50px;
+  text-align: left;
+  background-color: rgb(255, 255, 255, .3);
+  color: black;
+}
+
+
+
