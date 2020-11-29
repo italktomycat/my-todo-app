@@ -2,22 +2,22 @@ import React from 'react';
 import './App.css';
 import 'bulma/css/bulma.css'
 
-
-
-
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { faHippo, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SubmitForm } from './submit-form';
 
-export class ViewTask extends React.Component {
+class ViewTask extends React.Component {
 
-    state = {
-        tasks: ['task 1', 'task 2', 'task 3']
-    };
+    state = { term: '' };
 
-    handleSubmit = task => {
-        this.setState({ tasks: [...this.state.tasks, task] });
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (this.state.term === '') return;
+        this.props.onFormSubmit(this.state.term);
+        this.setState({ term: '' });
+        window.location.href = '/';
     }
 
     render() {
@@ -28,21 +28,8 @@ export class ViewTask extends React.Component {
                     <p>ToDo App</p>
                 </div>
 
-                <div className='container-form'>
-                    <form onClick={this.handleSubmit}>
-                        <input
-                            type='text'
-                            className='input'
-                            placeholder='Enter New Task'
-                            value={this.state.term}
-                            onChange={(e) => this.setState({ term: e.target.value })}
-                        />
-                        <button className='button'>
-                            <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
-                        </button>
-                    </form>
-                </div>
-
+    <SubmitForm onFormSubmit={this.handleSubmit} />
+                    
                 <div className='container-go-back'>
                     <Link to='/'><button className='button'>Go Back</button></Link>
                 </div>

@@ -2,13 +2,11 @@ import React from 'react';
 import './App.css';
 import 'bulma/css/bulma.css'
 
-
 import { TodoList } from './todo-list';
 
 import { Link } from 'react-router-dom';
 
 import { faHippo } from "@fortawesome/free-solid-svg-icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export class ViewHome extends React.Component {
