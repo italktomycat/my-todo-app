@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 import 'bulma/css/bulma.css'
 
 import { Link } from 'react-router-dom';
@@ -10,16 +10,6 @@ import { SubmitForm } from './submit-form';
 
 class ViewTask extends React.Component {
 
-    state = { term: '' };
-
-    handleSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.term === '') return;
-        this.props.onFormSubmit(this.state.term);
-        this.setState({ term: '' });
-        window.location.href = '/';
-    }
-
     render() {
         return (
             <div className="app-wrapper">
@@ -28,7 +18,7 @@ class ViewTask extends React.Component {
                     <p>ToDo App</p>
                 </div>
 
-                <SubmitForm onFormSubmit={this.handleSubmit} />
+                <SubmitForm onFormSubmit={this.props.onCreateTask} />
 
                 <div className='container-go-back'>
                     <Link to='/'><button className='button'>Go Back</button></Link>

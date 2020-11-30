@@ -1,5 +1,6 @@
+import '../App.css';
+
 import React from 'react';
-import './App.css';
 import 'bulma/css/bulma.css'
 
 import { TodoList } from './todo-list';
@@ -11,17 +12,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export class ViewHome extends React.Component {
 
-    state = {
-        tasks: ['task 1', 'task 2', 'task 3']
-    };
-
-    handleDelete = (index) => {
-        const newArr = [...this.state.tasks];
-        newArr.splice(index, 1);
-        this.setState({ tasks: newArr });
-    }
-
     render() {
+
         return (
             <div className="app-wrapper">
 
@@ -34,7 +26,7 @@ export class ViewHome extends React.Component {
                     <Link to='/view-task'><button className='button'>Add New Task</button></Link>
                 </div>
                 <div className='container-list' >
-                    <TodoList tasks={this.state.tasks} onDelete={this.handleDelete}></TodoList>
+                    <TodoList tasks={this.props.tasks} onDelete={this.props.onDeleteTask}></TodoList>
                 </div>
 
             </div>
