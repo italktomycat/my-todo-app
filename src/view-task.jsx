@@ -28,8 +28,8 @@ class ViewTask extends React.Component {
                     <p>ToDo App</p>
                 </div>
 
-    <SubmitForm onFormSubmit={this.handleSubmit} />
-                    
+                <SubmitForm onFormSubmit={this.handleSubmit} />
+
                 <div className='container-go-back'>
                     <Link to='/'><button className='button'>Go Back</button></Link>
                 </div>
